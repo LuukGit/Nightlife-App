@@ -1,0 +1,46 @@
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #6666cc; }
+
+#content {
+  width: 80%;
+  min-height: 80%;
+  font-family: "vollkorn", sans-serif; }
+
+#index {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 20px; }
+  #index h3 {
+    color: white;
+    font-size: 50px; }
+  #index input {
+    text-align: center;
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px; }
+
+#bar {
+  padding: 20px;
+  border: 1px white solid;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 17px; }
+  #bar #name {
+    font-size: 20px; }
+  #bar img {
+    float: left;
+    margin-right: 10px; }
+  #bar .btn {
+    background-color: #6666cc;
+    border: 1px solid white;
+    color: white; }
+  #bar .btn:hover {
+    background-color: #aaaadd; }
+
+#bar:hover {
+  box-shadow: 0 0 5px black; }
+
+/*# sourceMappingURL=home.css.map */

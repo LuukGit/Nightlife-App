@@ -20,7 +20,6 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.MONGO_URI);
 
 app.use("/client", express.static(process.cwd() + "/client"));
-app.use("/components", express.static(process.cwd() + "/app/components"));
 
 app.use(session({
 	secret: 'secretClementine',
