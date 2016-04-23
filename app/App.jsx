@@ -15,7 +15,6 @@ class App extends React.Component {
         user = JSON.parse(user);
         if (user){
           this.setState({ user: user });
-          console.log(user);
           if (typeof(Storage) !== "undefined")
           {
               var data = JSON.parse(localStorage.getItem("_my_bars"));
@@ -39,7 +38,6 @@ class App extends React.Component {
         var location = this.state.area.split(" ").join("+");
         ajax("POST", "api/" + location, "", function(data) {
             data = JSON.parse(data);
-            console.log(data.businesses);
             this.setState({ data: data.businesses });
         }.bind(this));
       }
@@ -96,11 +94,9 @@ class Bar extends React.Component {
 
     componentDidMount() {
         var name = this.props.data[this.props.index].name;
-        console.log(name);
         ajax("GET", "/database/" + name, "", function(data) {
             if (data != "not found") {
                 data = JSON.parse(data);
-                console.log(data);
                 this.setState({ going: data });
             }
         }.bind(this));
@@ -116,7 +112,6 @@ class Bar extends React.Component {
             var bar = this.props.data[this.props.index];
             ajax("POST", "/database", JSON.stringify({ user: this.props.user, bar: bar}), function(data) {
                 data = JSON.parse(data);
-                console.log(data);
                 this.setState({ going: data });
             }.bind(this));
         }
