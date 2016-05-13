@@ -17,10 +17,9 @@ class App extends React.Component {
           this.setState({ user: user });
           if (typeof(Storage) !== "undefined")
           {
-              var data = JSON.parse(localStorage.getItem("_my_bars"));
+              var data = JSON.parse(sessionStorage.getItem("_my_bars"));
               if (data != null) {
                   this.setState({data: data});
-                  localStorage.removeItem("_my_bars");
               }
           }
         }
@@ -104,8 +103,8 @@ class Bar extends React.Component {
 
     addUserToGoing() {
         if (!this.props.user) {
-            localStorage.setItem("_my_bars", JSON.stringify(this.props.data));
             window.location.href = window.location.href + "auth/github";
+            sessionStorage.setItem("_my_bars", JSON.stringify(this.props.data));
         }
         else {
             // Add user to going (maybe offer choice yes/no first??)
